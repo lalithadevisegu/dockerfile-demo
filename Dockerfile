@@ -1,7 +1,7 @@
 FROM node:10
-WORKDIR /app
-COPY package.json /app
+WORKDIR /app 
+COPY ["package.json", "package-lock.json*", "/app"]
 RUN npm install
 COPY . /app
-CMD node app.js 
 EXPOSE 8000
+CMD ["node", "/app/app.js"]
